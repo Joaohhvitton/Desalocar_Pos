@@ -34,24 +34,72 @@
 
     <!-- ============ LOGIN ============ -->
     <section class="view active" id="loginView">
-      <img class="logo logo-lg" src="redeflex-logo.svg" alt="Redeflex">
-      <h1>Console de Desalocação</h1>
-      <p class="lede">Acesso restrito à equipe OPCOM.</p>
+      <div class="login-wrap">
 
-      <form id="loginForm" novalidate>
-        <div class="field" id="fUser">
-          <label class="field-label" for="user">Usuário</label>
-          <input type="text" id="user" autocomplete="username" placeholder="opcom">
+        <img class="logo logo-lg" src="redeflex-logo.svg" alt="Redeflex">
+
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Console de Desalocação</div>
+            <div class="panel-desc">Acesso restrito à equipe OPCOM.</div>
+          </div>
+          <div class="panel-body">
+            <form id="loginForm" novalidate autocomplete="on">
+
+              <div class="field" id="fUser">
+                <label class="field-label" for="user">Usuário</label>
+                <input type="text" id="user" name="username"
+                       autocomplete="username" placeholder="opcom"
+                       spellcheck="false" autocapitalize="none" autofocus>
+              </div>
+
+              <div class="field" id="fPass">
+                <label class="field-label" for="pass">Senha</label>
+                <div class="input-group">
+                  <input type="password" id="pass" name="password"
+                         autocomplete="current-password" placeholder="••••••••">
+                  <button type="button" class="input-btn" id="togglePass"
+                          aria-label="Mostrar senha" tabindex="-1">
+                    <svg viewBox="0 0 24 24" id="eyeIcon"></svg>
+                  </button>
+                </div>
+                <div class="field-note" id="caps" hidden>
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 4 L5 11 h4 v5 h6 v-5 h4 Z" stroke-linejoin="round"/>
+                    <line x1="9" y1="20" x2="15" y2="20"/>
+                  </svg>
+                  Caps Lock está ativado
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" id="loginBtn">
+                <span id="loginLabel">Entrar</span>
+              </button>
+
+              <div class="alert" id="loginErr" role="alert" aria-live="polite" hidden>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; margin-top:1px;">
+                  <circle cx="12" cy="12" r="9"/>
+                  <line x1="12" y1="8" x2="12" y2="12.5"/>
+                  <line x1="12" y1="16" x2="12" y2="16.01"/>
+                </svg>
+                <span>Usuário ou senha inválidos.</span>
+              </div>
+
+            </form>
+          </div>
         </div>
-        <div class="field" id="fPass">
-          <label class="field-label" for="pass">Senha</label>
-          <input type="password" id="pass" autocomplete="current-password" placeholder="••••••••">
-        </div>
-        <button type="submit" class="btn btn-primary" id="loginBtn">
-          <span id="loginLabel">Entrar</span>
-        </button>
-        <div class="alert" id="loginErr" hidden>Usuário ou senha inválidos.</div>
-      </form>
+
+        <footer class="login-foot">
+          <span class="foot-env">
+            <span class="env-dot"></span>Produção
+          </span>
+          <span class="foot-sep">·</span>
+          <span>OPCOM · Adquirência</span>
+          <span class="foot-sep">·</span>
+          <span class="foot-ver">v1.0</span>
+        </footer>
+
+      </div>
     </section>
 
     <!-- ============ CONSOLE ============ -->
